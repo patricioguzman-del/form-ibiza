@@ -13,6 +13,8 @@ export const site = {
   legalCompanyName: "[LEGAL COMPANY NAME]",
   nif: "[NIF]",
   year: 2026,
+  /** Named by the owner (docs/01-brand-dna.md, owner's answers). Roles and photo to come. */
+  team: ["Rupert Baird Murray", "Cat Cheshire", "Patricio Guzman"],
   /**
    * While false, every page tells search engines not to list it. Flip to true at launch (milestone 9).
    * Nothing goes live before then.

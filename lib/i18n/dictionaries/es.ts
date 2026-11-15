@@ -1,4 +1,4 @@
-import type { Dictionary } from "./en";
+import en, { type Dictionary } from "./en";
 
 /** First draft of the interface text in Spanish. A native speaker should check it (milestone 10). */
 const es: Dictionary = {
@@ -45,6 +45,55 @@ const es: Dictionary = {
       legalNotice: "Aviso legal",
     },
   },
+  property: {
+    bedrooms: "{count} dormitorios",
+    bedroomsOne: "1 dormitorio",
+    priceOnApplication: "Precio bajo consulta",
+    photoToCome: "[FOTOGRAFÍA PENDIENTE]",
+    photoOf: "Marcador de posición: fotografía de {name}",
+    placeholderBody: "Esta página de propiedad se construye en el siguiente hito.",
+    backToSales: "Volver a Ventas",
+    features: {
+      seaView: "Vistas al mar",
+      sunset: "Puesta de sol",
+      turnkey: "Llave en mano",
+      frontLine: "Primera línea",
+      tennisCourt: "Pista de tenis",
+      gatedCommunity: "Urbanización cerrada",
+      newBuild: "Obra nueva",
+      project: "Proyecto",
+      touristLicence: "Licencia turística",
+    },
+  },
+  sales: {
+    countOne: "{count} propiedad",
+    countMany: "{count} propiedades",
+    filterAndSort: "Filtrar y ordenar",
+    area: "Zona",
+    price: "Precio",
+    bedrooms: "Dormitorios",
+    features: "Características",
+    sortLabel: "Ordenar",
+    sortPrefix: "Ordenar: ",
+    sortOptions: { priceHigh: "Precio, de mayor a menor", priceLow: "Precio, de menor a mayor", newest: "Más recientes" },
+    minPrice: "Precio mínimo (€)",
+    maxPrice: "Precio máximo (€)",
+    bedroomsOption: "{count} dormitorios",
+    bedroomsOrMore: "{count} o más dormitorios",
+    priceFrom: "Desde {amount}",
+    priceUpTo: "Hasta {amount}",
+    priceBetween: "{min} a {max}",
+    clear: "Borrar",
+    clearAll: "Borrar todo",
+    apply: "Aplicar",
+    removeFilter: "Quitar filtro: {name}",
+    activeFilters: "Filtros activos",
+    showing: "Mostrando {shown} de {total}",
+    showMore: "Mostrar más propiedades",
+    noResults: "Ninguna propiedad coincide con estos filtros.",
+  },
+  // [ES TRANSLATION TO COME] Page copy stays in English until FORM supplies the Spanish text (milestone 10).
+  pages: en.pages,
   notFound: { title: "Página no encontrada", body: "La página que busca no está aquí.", link: "Volver al inicio" },
   meta: {
     description:
