@@ -18,6 +18,14 @@ export type Municipality =
   | "Sant Joan de Labritja"
   | "Sant Antoni de Portmany";
 
+export type PropertyContent = {
+  /** The short line shown as the heading above the description. */
+  headline: string;
+  paragraphs: string[];
+  locationIntro: string;
+  travelTimes: { place: string; minutes: number }[];
+};
+
 export type Property = {
   slug: string;
   name: string;
@@ -32,6 +40,10 @@ export type Property = {
   plotM2: number;
   features: FeatureId[];
   featuredOnHome: boolean;
+  /** Shown in "Featured properties" at the bottom of other listings. */
+  featured: boolean;
+  /** Text, in English. Missing until the copy is migrated (milestone 2); the page shows [BRACKETED] slots. */
+  content?: PropertyContent;
   /** Position in the current manual order on the Wix site. */
   order: number;
 };
