@@ -1,0 +1,140 @@
+/*
+ * FORM | ibiza design tokens.
+ * Source: docs/03-design-system.md. Nothing outside this file defines a colour,
+ * font, size or shape. If the design system changes, change it here.
+ */
+
+@theme {
+  /* Wipe Tailwind's built-in colours, corners and shadows so nothing off-system can be used. */
+  --color-*: initial;
+  --radius-*: initial;
+  --shadow-*: initial;
+  --inset-shadow-*: initial;
+  --drop-shadow-*: initial;
+  --text-shadow-*: initial;
+
+  /* Colour */
+  --color-paper: #f8f7f3; /* every page background */
+  --color-sand: #f1efe9; /* quiet bands, spec bar */
+  --color-ink: #100e1a; /* text, primary buttons, footer */
+  --color-ink-soft: #43414a; /* secondary text */
+  --color-rule: #cac8c8; /* decorative hairlines */
+  --color-line-control: #86848b; /* form field borders */
+  --color-accent: #b5674a; /* terracotta: active menu link and form errors only */
+
+  /*
+   * Fonts. These are the free stand-ins named in the design system.
+   * When FORM's licensed fonts arrive (Cheltenham, Avenir, Didot), swap them here only.
+   */
+  --font-wordmark: "GFS Didot", Didot, "Bodoni 72", "Bodoni MT", serif;
+  --font-heading: Gelasio, "ITC Cheltenham", Cheltenham, Georgia, serif;
+  --font-body: "Nunito Sans", Avenir, "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+
+  /* Spacing steps: 8 · 16 · 24 · 40 · 64 · 96 · 128 */
+  --spacing-s1: 8px;
+  --spacing-s2: 16px;
+  --spacing-s3: 24px;
+  --spacing-s4: 40px;
+  --spacing-s5: 64px;
+  --spacing-s6: 96px;
+  --spacing-s7: 128px;
+
+  /* Layout */
+  --container-column: 1148px; /* 1100px of content plus 24px of side padding on each side */
+  --breakpoint-md: 48rem; /* 768px: phones below, desktop above */
+}
+
+/* ---- Type roles (design system section 1). Nothing on the site is larger than 30px. ---- */
+
+@utility t-wordmark {
+  font-family: var(--font-wordmark);
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  @media (min-width: 48rem) {
+    font-size: 24px;
+  }
+}
+@utility t-statement {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  @media (min-width: 48rem) {
+    font-size: 30px;
+    line-height: 1.35;
+  }
+}
+@utility t-section {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  @media (min-width: 48rem) {
+    font-size: 26px;
+  }
+}
+@utility t-name {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+}
+@utility t-body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.75;
+}
+@utility t-ui {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+}
+@utility t-label {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 14px;
+}
+@utility t-caption {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+/* The one centred column. 1100px of content on desktop, 20px side margins on phones. */
+@utility column {
+  width: 100%;
+  max-width: var(--container-column);
+  margin-inline: auto;
+  padding-inline: 20px;
+  @media (min-width: 48rem) {
+    padding-inline: 24px;
+  }
+}
+
+/* Body text never runs wider than 38rem. */
+@utility measure {
+  max-width: 38rem;
+}
+
+/* Plain text link: underlined, 15px, 44px tall tap target. */
+@utility text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  font-weight: 400;
+  font-size: 15px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}

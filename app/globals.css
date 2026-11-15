@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+/* Fonts: free stand-ins, self-hosted so no request goes to Google. */
+@import "@fontsource/gelasio/latin-400-italic.css";
+@import "@fontsource/gelasio/latin-700-italic.css";
+@import "@fontsource/nunito-sans/latin-300.css";
+@import "@fontsource/nunito-sans/latin-400.css";
+@import "@fontsource/gfs-didot/latin-400.css";
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* Links and hovers fade over 0.4s. */
+  a {
+    color: inherit;
+    transition: color 0.4s ease, opacity 0.4s ease;
+  }
+  a:hover {
+    color: var(--color-ink-soft);
+  }
+
+  /* Visible keyboard focus everywhere. The ring takes the text colour, so it works on paper and on ink. */
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  /* Locked while the full-screen menu is open. */
+  html.menu-open {
+    overflow: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* The menu sheet fades in (opacity only). */
+@keyframes menu-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
